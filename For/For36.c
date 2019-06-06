@@ -5,12 +5,11 @@
 
 int main ()
 { 
-	int i, number, summ ;
+	int N, K, i, summ = 0;
 	printf ("Enter number: ");
-	scanf  ("%i", &number);
-	for (i = 1; i < number; i++){
-		factorial (i -1);
-	//	summ += factorial (i);
+	scanf  ("%i%i", &N, &K);
+	for (i  ; i <= N; i++){
+		summ += pow(i, K);
 	}
 	printf ("Summ = %i", summ);
 	getchar();

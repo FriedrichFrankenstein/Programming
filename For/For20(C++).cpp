@@ -5,12 +5,15 @@
 
 int main ()
 { 
-	int i, number, summ ;
+	int i, number, summ, n, res ;
 	printf ("Enter number: ");
 	scanf  ("%i", &number);
 	for (i = 1; i < number; i++){
-		factorial (i -1);
-	//	summ += factorial (i);
+		for (i; i > n; n++ ){
+			res *= i ;
+		}
+		summ += res;
+		
 	}
 	printf ("Summ = %i", summ);
 	getchar();
