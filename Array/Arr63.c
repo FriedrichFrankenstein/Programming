@@ -21,11 +21,10 @@ int main()
             {
                 A[h] = A [h - 1];
                 h--;
-                if ( h == 0 )
+            } else if ( h == 0 )
             {
                 A[h] = K;
                 break;
-            }
             }
             else
             {
@@ -45,11 +44,10 @@ int main()
             {
                 B[h] = B [h - 1];
                 h--;
-                 if ( h == 0 )
+               }else  if ( h == 0 )
             {
                 B[h] = K;
                 break;
-            }
             }
             else
             {
@@ -72,12 +70,12 @@ int main()
             {
                 C[h] = C [h - 1];
                 h--;
-                 if ( h == 0 )
+                }else if ( h == 0 )
             {
                 C[h] = K;
                 break;
             }
-            }
+
             else
             {
                 C[h] = K;
