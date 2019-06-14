@@ -2,7 +2,11 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
+void printArray ( int A [], int size){
 
+
+
+}
 
 
 int main()
