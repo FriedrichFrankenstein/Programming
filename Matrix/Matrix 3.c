@@ -19,8 +19,9 @@ int main()
     }
      for ( i = 0; i < M; i++){
         for ( h = 0; h < N; h++){
-        printf("Array [%i][%i] = %i\n", i, h, array [i][h]);
+        printf("%i ", i, h, array [i][h]);
         }
+        printf("\n");
     }
 
     getchar();

@@ -8,7 +8,6 @@
 int main()
 {
     int M, i = 0, h = 0, k = 0, g = 0;
-    //printf("M = %i, N = %i\n", M, N);
     printf ( "Enter length of array: " );
     scanf ( "%i", &M );
     g = ( M - 3 ) / 2 + 2;
@@ -30,10 +29,8 @@ int main()
                 return 0;
             }
         }
-        // printf ("\ni = %i\n", i);
         for ( h = i + 1, k = M - ( i + 1 ); h <= M - ( i + 1 ); h++ )
         {
-            // printf ("\nk2 = %i, h = %i\n", k, h);
             printf ( "2 : %i\n", A [k][h] );
         }
         for ( h = M - ( i + 1 ), k = M - ( i + 1 ); k > i; k -- )
@@ -45,11 +42,7 @@ int main()
             printf ( "4 : %i\n", A [k][h] );
         }
     }
-    /*for ( i = 0; i < M; i++){
-       for ( h = 0; h < M; h++){
-       printf("Array [%i][%i] = %i\n", i, h, A [i][h]);
-       }
-    }*/
+
     getchar();
 }
 
