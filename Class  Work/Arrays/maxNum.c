@@ -28,6 +28,7 @@ void sortArrayMax ( int a[], int size )
         temp = a [index];
         a [index] = a [j];
         a [j] = temp;
+        pri
     }
 }
 void sortArrayMin ( int a[], int size )
