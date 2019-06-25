@@ -35,7 +35,12 @@ int main ()
             arrayLength ++;
         }
         arrayLength++;
-        result = ( int * ) calloc ( arrayLength, 4 );
+        result = ( int * ) calloc ( arrayLength + 7 , 4 );
+        if ( result == NULL )
+                {
+                    printf ( "\nNo memory\n" );
+                    return 1;
+                }
         switch ( selectedSystem )
         {
         case 10 :

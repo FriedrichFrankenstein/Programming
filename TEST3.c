@@ -4,29 +4,19 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 
 int main()
 {
-    char *str;
-    str = (char *) malloc (13);
-
-    if (str == NULL){
-        puts("WRONG!!");
-    }else {
-    strcpy (str, "Learning Lab");
-    puts (str);
-
-    str = (char *) realloc(str, 19);
-    int length = sizeof (str);
-    printf("%i\n", length);
-    strcat (str, " rocks");
-    puts (str);
-    free(str);
-     printf("_______\n");
-     puts (str);
-    }
+    char words [40] = "WORLD";
+    char newWord[40] = "WORD";
+    char temp [40];
+    scanf ( "%s",  words  );
+    printf ("%s\n", words);
+    strcpy(temp, newWord);
+    printf("%s\n", temp);
     getch();
     return 0;
 }
