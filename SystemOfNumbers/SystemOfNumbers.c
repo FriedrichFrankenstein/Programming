@@ -35,7 +35,7 @@ int main ()
             arrayLength ++;
         }
         arrayLength++;
-        result = ( int * ) calloc ( arrayLength, 4 );
+        result = ( int * ) calloc ( arrayLength + 7, 4 );
         switch ( selectedSystem )
         {
         case 10 :

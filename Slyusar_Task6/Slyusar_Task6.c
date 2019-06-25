@@ -34,8 +34,7 @@ int main ()
             tempNumber /= 2;
             arrayLength ++;
         }
-        arrayLength++;
-        result = ( int * ) calloc ( arrayLength, 4 );
+        result = ( int * ) calloc ( arrayLength + 8, 4 );
         switch ( selectedSystem )
         {
         case 10 :
