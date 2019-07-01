@@ -1,60 +1,70 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <malloc.h>
 #include <conio.h>
+#include <math.h>
 
-
-int** getMem(int M, int N); // первинне виділення пам'яті
-void inpMatr(int** a,int n, int m); // введення з клави
-void outMatr(int** a); // виведення на екран
-int** chngMem(int **a); // зміна обсягу і структури дин. пам'яті
-
-int main()
+int main ()
 {
-	int i, j;			// лiчильники рядкґв і стовпчиків
-	int** a;			// покажчик на двовимірний масив
-    int* p, *p1;		// допоміжні покажчики на ділянки масиву з числами
-    int M,N, M1;
-
-	printf("Input num of rows: M=");
-	scanf("%d",&M);
-	printf("Input num of cols: N=");
-	scanf("%d",&N);
-
-   	a=getMem(M,N); // виділення початкового масиву
-    M1= sizeof(a);
-    printf("\nM = %i\n", M1);
- 	for ( i = 0; i < M; i ++ ){
- 		*a=(int*)malloc(N*sizeof(int));	 // і під кожен рядок окремо
-		printf("a[%i]=%p\n",i,*a++); // стартова адреса - на екран, а++ - покажчик на наст. комірку
-	}
- /*  M1= _msize(a)/sizeof(int*);
-    a-=M;
-	for(i=M-1;i>=1;i--){ // обхід масиву з останнього за номером рядка
-		p=*(a+i); // покажчик - на перший елемент і-го рядка
-		p1=*(a+i-1); // другий покажчик - на перший елемент сусіднього рядка
-		for(j=1; j<=N; j++){ // перебираємо елементи в рядках
-			(*p++)*=*p1++; // розіменовуючи покажчики - перемножуємо сусідні елементи одного стовпчика, потім покажчики зсуваємо на комірку вперед
+    float number;
+    char signOff;
+    int i = 0, resultArray [2] = {}, flag = 0, counterFract = -2, counterInt = -1;
+    char *string = calloc ( 1, sizeof ( char ) );
+    printf ( "Enter number: " );
+    while ( 1 )
+    {
+        string [i] = getch();
+        if ( string [i] == 13 )
+        {
+            break;
         }
-	}*/
-
+          if ( string[i] == 46 )
+        {
+            flag = 1;
+        }
+        printf ( "%c", string[i] );
+        signOff =  string [i];
+        string = realloc ( string, _msize ( string ) + 1 );
+        if ( flag == 0 )
+        {
+            counterInt++;
+        }
+        else
+        {
+            counterFract++;
+        }
+        i++;
+    }
+    flag = 0;
+    if ( counterFract > 2){
+        resultArray [1] += 1;
+    }
+    for ( i = 0; i < _msize ( string ) - 1; i++ )
+    {
+        if ( string[i] == 46 )
+        {
+            flag = 1;
+            continue;
+        }
+        if ( flag == 0 )
+        {
+            resultArray[flag] += ( string[i] - 48 ) * pow ( 10, counterInt );
+            counterInt--;
+        }
+        else
+        {
+             if ( counterFract >= 2){
+                resultArray [1] += 1;
+            }
+            //printf("\n%i\n", counterFract);
+            resultArray[flag] += ( string[i] - 48 ) * pow ( 10, counterFract );
+            int test = pow ( 10, counterFract);
+           // printf("\nstring = %i, counter = %i \n", test, counterFract );
+            counterFract--;
+        }
+    }
+    //resultArray [1] += 1;
+    free(string);
+    printf ( "\nResult:\n%i\n%i", resultArray[0], resultArray[1] );
+    getchar();
+    return 0;
 }
-
-
-
-int** getMem(int M, int N )
-{
-	int **a;
-	int i;
-
-	a=(int**)malloc(M*sizeof(int*)); // виділ. пам'ять під масив покажчиків
-
- 	for ( i = 0; i < M; i ++ ){
- 		*a=(int*)malloc(N*sizeof(int));	 // і під кожен рядок окремо
-		printf("a[%i]=%p\n",i,*a++); // стартова адреса - на екран, а++ - покажчик на наст. комірку
-	}
-    a-=M; // після фіксації адрес усіх рядків - покажчик на початкову позицію
-
-    return a; // повертаємо адресу в місце виклику функції
-}
-
-
