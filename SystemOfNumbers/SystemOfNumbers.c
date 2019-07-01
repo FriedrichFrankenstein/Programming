@@ -41,6 +41,7 @@ int main ()
                     printf ( "\nNo memory\n" );
                     return 1;
                 }
+        result = ( int * ) calloc ( arrayLength + 7, 4 );
         switch ( selectedSystem )
         {
         case 10 :
