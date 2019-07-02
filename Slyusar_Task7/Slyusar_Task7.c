@@ -41,7 +41,7 @@ int main()
     // tranformWordIntoCharArray();
     //floatWholeFractional();
     //evenNumberInArray ();
-    vowelsInTenLetters ();
+    //vowelsInTenLetters ();
     getch();;
     return 0;
 }
@@ -191,6 +191,8 @@ void vowelsInTenLetters ()
             }
         }
     }
+    free(string);
+    free(vowels);
 }
 
 
