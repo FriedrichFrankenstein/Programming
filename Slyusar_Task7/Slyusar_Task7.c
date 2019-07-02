@@ -36,12 +36,50 @@ void vowelsInTenLetters();
 int main()
 {
     srand ( time ( NULL ) );
-    // saveNumberOfNumberInArray();
-    //createArray();
-    // tranformWordIntoCharArray();
-    //floatWholeFractional();
-    //evenNumberInArray ();
-    vowelsInTenLetters ();
+    char choise = 0, offSign;
+    do
+    {
+        printf ( "Choose task (1-6)\n" );
+        choise = getch();
+        switch ( choise )
+        {
+        case '1':
+        {
+            saveNumberOfNumberInArray();
+            break;
+        }
+        case '2':
+        {
+            createArray();
+            break;
+        }
+        case '3':
+        {
+            tranformWordIntoCharArray();
+            break;
+        }
+        case '4':
+        {
+            floatWholeFractional();
+            break;
+        }
+        case '5':
+        {
+            evenNumberInArray ();
+            break;
+        }
+        case '6':
+        {
+            vowelsInTenLetters ();
+            break;
+        }
+        default:
+            printf ( "Wrong number" );
+        }
+        printf ( "\nIf you don't want to try again press Esc\n" );
+        offSign = getch();
+    }
+    while ( offSign != 27 );
     getch();;
     return 0;
 }
@@ -59,7 +97,6 @@ void saveNumberOfNumberInArray ()
         temp /= 10;
         lengthArray += 1;
         array = realloc ( array,  lengthArray * 4 );
-        printf ( "lengthArray  = %i\n", lengthArray );
         i ++;
     }
     for ( i = 0; i < ( lengthArray - 1 ) / 2; i++ )
@@ -79,6 +116,7 @@ void createArray ()
 {
     int lengthArray = rand() % 10;
     int *array = calloc ( lengthArray, sizeof ( int ) );
+    printf ( "Length of array: %i", _msize ( array ) / 4 );
     free ( array );
 }
 
@@ -95,7 +133,7 @@ void tranformWordIntoCharArray ()
 void floatWholeFractional ()
 {
     float number;
-    int i = 0, resultArray [2] = {}, flag = 0, counterFract = -2, counterInt = -1;
+    int i = 0, *resultArray, flag = 0, counterFract = -2, counterInt = -1;
     char *string = calloc ( 1, sizeof ( char ) );
     printf ( "Enter number: " );
     while ( 1 )
@@ -120,6 +158,14 @@ void floatWholeFractional ()
             counterFract++;
         }
         i++;
+    }
+    if ( counterFract > 0 )
+    {
+        resultArray = calloc ( 2, 4 );
+    }
+    else
+    {
+        resultArray = calloc ( 1, 4 );
     }
     flag = 0;
     for ( i = 0; i < _msize ( string ) - 1; i++ )
@@ -149,6 +195,8 @@ void floatWholeFractional ()
     {
         printf ( "\nResult:\n%i\n%i", resultArray[0], resultArray[1] );
     }
+    free ( string );
+    free ( resultArray );
 }
 
 void evenNumberInArray ()
@@ -191,6 +239,8 @@ void vowelsInTenLetters ()
             }
         }
     }
+    free ( string );
+    free ( vowels );
 }
 
 
