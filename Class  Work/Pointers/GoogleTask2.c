@@ -1,22 +1,46 @@
 #include <stdio.h>
 #include <conio.h>
-#include <math.h>
-#include <stdlib.h>
-#include <time.h>
+#include <string.h>
+#define N 5
+#define M 15
 
 
 
-
-int main(){
-    int num [5] = {0, 1, 2 ,3 ,4 };
-    int *pnum = num;
-    printf("%i\n", *pnum);
-    *pnum += 1;
-    printf("%i\n", *pnum);
-    printf("%i\n", num[0]);
-    free(pnum);
-    if (pnum == NULL){
-        printf("TRUE");
+int main()
+{
+    int i, j,  minValue = 0, temp = 0;
+    char tempString [15];
+    char words [N][M];
+    int ascArray [N];
+    for ( i = 0; i < N; i++ )
+    {
+        printf ( "Enter your word: " );
+        scanf ( "%s", ( words + i ) );
+    }
+    for ( i = 0; i < N; i++ )
+    {
+        ascArray[i] = ( int ) * ( * ( words + i ) );
+    }
+    for ( i = 0; i < N - 1; i++ )
+    {
+        minValue = i;
+        for ( j = i + 1; j < N; j++ )
+        {
+            if ( ascArray [j] < ascArray[minValue] )
+            {
+                minValue = j;
+            }
+        }
+        temp = ascArray [i];
+        ascArray[i] = ascArray [minValue];
+        ascArray [minValue] = temp;
+        strcpy ( tempString, * ( words + i ) );
+        strcpy ( * ( words + i ), * ( words + minValue ) );
+        strcpy ( * ( words + minValue ), tempString );
+    }
+    for ( i = 0; i < N; i++ )
+    {
+        printf ( "%s\n", * ( words + i ) );
     }
     getch();
     return 0;
