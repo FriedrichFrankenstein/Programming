@@ -28,14 +28,16 @@ int main()
         S[strlen ( S ) - i - 1] = temp;
     }
     puts ( S );
-    if ( strstr ( S, S1 ) != 0 )
-    {
-        S4 = strstr ( S, S1 );
-        for ( j = 0; j < strlen ( S3 ); j++ )
-        {
-            * ( S4 + j ) = * ( S3 + j );
-        }
-    }
+   char * tempForChar = (char *) strstr ( S, S1 );
+//    if (  temp != 0 )
+//    {
+        printf("TRUE");
+//        S4 = strstr ( S, S1 );
+//        for ( j = 0; j < strlen ( S3 ); j++ )
+//        {
+//            * ( S4 + j ) = * ( S3 + j );
+//        }
+  //  }
     for ( i = 0; i < strlen ( S ) / 2; i ++ )
     {
         temp = S[i];
