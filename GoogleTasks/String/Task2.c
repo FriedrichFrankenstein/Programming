@@ -18,7 +18,8 @@ int checkLengthOfString (int n1, int n2,char *str1, char *str2 );
 char * newString ( int n1, int n2, char *str1, char *str2);
 
 int main()
-{   int n1, n2, *pn1 = &n1, *pn2 = &n2, checkLength;
+{       sortArrayOfWords();
+      int n1, n2, *pn1 = &n1, *pn2 = &n2, checkLength;
     char *str1  = (char *) calloc(30, 1);
     char *str2 = (char *) calloc(30, 1);
     char *str3;
@@ -42,9 +43,7 @@ void sortArrayOfWords ()
 {
     int i, j = 0, sign;
     char temp [15];
-    char string [5][15] = { "Joke(1)", "orange(3)", "Sun(4)", "whale(5)", "Kite(2)"};
-    // puts(string);
-    //printf("%s",*(string + j) );
+    char string [5][15] = { "Kiev", "Vinnitsa", "Lvov", "Dnepr", "Kharkov"};
     for ( i = 0; i < 5; i++ )
     {
         for ( j = i + 1; j < 5; j++ )
