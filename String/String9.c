@@ -8,16 +8,16 @@
 
 
 int main(){
-    int N = 0, i;
-    printf("Enter N: ");
-    scanf("%i", &N);
-    printf("Enter C (char)\n ");
-    char C = getch();
-    char *string = calloc(N, sizeof(char));
-    for (i = 0; i < N; i++){
-        *(string + i) = C;
+    int i, j ;
+    char string[3][20] = {"pen", "cup", "brains"};
+    char use [] = "use";
+    char words [3][20] ;
+    for (i = 0; i < 3; i++){
+        sprintf ( words [i], "%s %s", "use", string[i]);
+        strcpy(string[i], words[i]);
+        puts (string [i]);
     }
-    puts (string);
+    puts (string [1]);
     getch();
     return 0;
 }

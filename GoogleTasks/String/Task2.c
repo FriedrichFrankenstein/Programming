@@ -25,7 +25,7 @@ int main()
     setNumberAndString (pn1, pn2, str1, str2);
     checkLength = checkLengthOfString (n1, n2,str1, str2 );
     if ( checkLength == 0){
-        printf("Some string longer than some n!");
+        printf("Some n longer than some string!");
         return 0;
     }
     str3 = newString(n1, n2, str1, str2);

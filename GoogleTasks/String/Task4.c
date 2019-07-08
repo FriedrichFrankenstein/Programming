@@ -10,7 +10,8 @@
 int main()
 {
     char *s1 = malloc ( 40* 1 );
-    char *s2 = malloc ( 15* 1 );
+    char *s2 = malloc ( 40* 1 );
+    char temp;
     int n, sign = 0;
     printf ( "Enter string s1: " );
     gets ( s1 );
@@ -22,16 +23,19 @@ int main()
         printf("Enter number n: ");
         scanf("%i", &n);
         fflush(stdin);
-        if (n > strlen(s1) + 1){
+        if (n > strlen(s2) + 1){
             printf("\nn is too big, enter less number\n");
             sign = 1;
             continue;
-        } else if ( (_msize(s1) - n) < strlen(s2)){
+        } else if ( _msize(s1)  < strlen(s2)){
             printf("\nNot enough space to copy s2 in s1!\n");
             sign = 1;
             continue;
         }
-        strcpy(s1 + n, s2);
+        s2 [n] = 0;
+        temp = s1 [n];
+        strcpy(s1 , s2);
+        s1 [n] = temp;
     }  while( sign == 1);
     puts(s1);
     getch();
