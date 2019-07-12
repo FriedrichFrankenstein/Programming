@@ -297,12 +297,12 @@ void changeSomeToAny ( char string [] )
 void amountOfRepeatOfLetters ( char string [] )
 {
     //Дана строка. Определить частоту повторяемости букв в строке
-    int amountLetter [25] = {}, i;
-    for ( i = 0; i < 25; i++ )
+    int amountLetter [26] = {}, i;
+    for ( i = 0; i < 26; i++ )
     {
         amountLetter [ string [i] - 97] ++;
     }
-    for ( i = 0 ; i < 25; i++ )
+    for ( i = 0 ; i < 26; i++ )
     {
         if ( amountLetter [i] != 0 )
         {
