@@ -282,7 +282,6 @@ void changeSomeToAny ( char string [] )
     char *adressOnSome;
     for ( i = 0; i < strlen ( string ); i ++ )
     {
-        //  puts(string);
         adressOnSome = strstr ( string, "some" );
         if ( adressOnSome != 0 )
         {
