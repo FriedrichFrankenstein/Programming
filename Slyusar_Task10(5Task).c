@@ -169,32 +169,45 @@ void turnWordsInString ( char string [] )
 {
     toUpperCase ( string );
     int i, j = 0, k = 0;
-    char tempString [30][20], temp, length;
+   // char tempString [9][20], temp;
+    char temp;
+    char **tempString = calloc (1, 1);
+    tempString[0] = calloc (20, 1);
+//    printf("LENGTH = %i", _msize(tempString[0]) );
+//    tempString = realloc (tempString, _msize (tempString) + 1);
+//    tempString[1] = calloc (20, 1);
+//    printf("LENGTH = %i", _msize(tempString[1]) );
+    //int numberOfWords =  sizeof(tempString) / 20;
     for ( i = 0; i < strlen ( string ); i++ )
     {
         if ( string [i] < 'A' || string [i] > 'Z' )
         {
             tempString [j][k] = 0;
+            tempString = realloc (tempString, _msize (tempString) + 1);
             j++;
+            printf("%i", j);
+            tempString [j] = calloc(20, 1);
             k = 0;
             continue;
         }
+      //  printf("%c", tempString [j][k]);
         tempString [j][k++] = string[i];
     }
-    length = j;
-    for ( i = 0; i < length; i++ )
-    {
-        for ( j = 0; j < strlen ( tempString[i] )/2 ; j++ )
-        {
-
-            temp = tempString [i][j];
-            tempString [i][j] = tempString [i][strlen ( tempString[i] ) - j - 1];
-            tempString [i][strlen ( tempString[i] ) - j - 1] = temp;
-        }
-    }
-
-    for ( i = 0; i < length; i++ )
-    {
-        printf ( "%s ", tempString[i] );
-    }
+    printf("LENGTH = %i", _msize(tempString[6]) );
+    int length = _msize(tempString);
+//    for ( i = 0; i < length; i++ )
+//    {
+//        for ( j = 0; j < strlen ( tempString[i] ) / 2; j++ )
+//        {
+//            temp = tempString [i][j];
+//            tempString [i][j] = tempString [i][strlen ( tempString[i] ) - j - 1];
+//            tempString [i][strlen ( tempString[i] ) - j - 1] = temp;
+//        }
+//        tempString [i][j] = 0;
+//    }
+//printf ( "%s ", tempString[1] );
+//    for ( i = 0; i < length; i++ )
+//    {
+//        printf ( "%s ", tempString[i] );
+//    }
 }
