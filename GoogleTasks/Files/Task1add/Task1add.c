@@ -32,10 +32,10 @@ int main()
         strcpy(string[k], tempWord);
         while (1){
             if (fscanf(filePointer2, "%s", &tempWord) == EOF) break;
-          // printf("k = %i; %s =  %s\n", k, string[k],  tempWord);
+            // printf("k = %i; %s =  %s\n", k, string[k],  tempWord);
             if (strcmp(tempWord, string[k]) == 0){
              //   printf("TRUE\n");
-                counter [k] ++;
+            counter [k] ++;
             }
         }
         k++;
