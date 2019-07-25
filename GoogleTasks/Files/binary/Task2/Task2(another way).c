@@ -1,17 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
+#include <stdlib.h>
 #define N 15
-#define M 15
+#define M 16
+
+void creatingBinaryFile ();
 
 int main()
 {
     FILE* fp = fopen ( "input.dat", "rb" );
     FILE* fpOutput = fopen ( "output.dat", "wb" );
+    creatingBinaryFile  ();
     int A[N] = {}, i = 0, j, B[M] = {}, temp;
-    if ( fread ( A, sizeof ( int ), 15, fp ) <= N )
+    if ( fread ( A, sizeof ( int ), N, fp ) >= N )
     {
-            fread ( B, sizeof ( int ), 14, fp );
+            fread ( B, sizeof ( int ), M, fp );
             if ( feof(fp)){
             printf ( "Reached end of file!\n" );
             } else {
@@ -39,4 +44,15 @@ int main()
     return 0;
 }
 
+void creatingBinaryFile (){
 
+  srand(time(NULL));
+    FILE* fp = fopen("input.dat", "wb");
+    int arr [30], i;
+    for (i = 0; i < 30; i++){
+        arr[i] = rand() % 11;
+    }
+    fwrite(arr, sizeof(int), 30, fp);
+    fclose(fp);
+
+}

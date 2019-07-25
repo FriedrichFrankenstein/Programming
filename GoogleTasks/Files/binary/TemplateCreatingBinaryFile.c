@@ -12,6 +12,7 @@ int main()
         arr[i] = i+10;
     }
     fwrite(arr, sizeof(int), 29, fp);
+    fclose(fp);
     return 0;
 }
 
