@@ -1,45 +1,31 @@
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
+#include <conio.h>
 #include <time.h>
-#define M 5
-#define N 5
+#include <stdlib.h>
+#define N 10
+int numNum (int i, int ourElem, int arr[N]);
 
 int main ()
 {
-    int i, j, Sum = 0;
-    int SumArray[N] = {};
-    int nMax = 0;
-    int array[N][M] =
-    {
-        {2, 4, 6, 8, 10},
-        {6, 3, 1, 5, 9},
-        {7, 8, 10, 3, 1},
-        {6, 2, 8, 3, 10},
-        {11, 18, 3, 1, 2}
-    };
-    for ( i = 0; i < N; i++ )
-    {
-        for ( j = 0; j < N; j++ )
-        {
-            SumArray[i] += array[i][j];
-            if ( SumArray [i] > SumArray[nMax] )
-            {
-                nMax = i;
-            }
-        }
-    }
-    printf ( "Number of line %i, value %i\n", nMax, SumArray[nMax] );
+    srand(time(NULL));
+    int arr[N], ourElem, i;
     for ( i = 0; i < N; i++){
-        printf("SumArray [%i] = %i\n", i, SumArray[i]);
+        arr[i] = rand() % 10;
+        printf("%i ", arr[i]);
     }
-    printf("\n\n");
-    for ( i = 0; i < N; i++ )
-    {
-        for ( j = 0; j < M; j++ )
-        {
-            printf ( "array[%i][%i]-%i\n", i, j, array[i][j] );
-        }
+    printf("\nEnter necessary number: \n");
+    scanf("%i", &ourElem);
+    printf("\nResult = %i", numNum(0, ourElem, arr));
+    getch();
+    return 0;
+}
+
+int numNum (int i, int ourElem, int arr[N]){
+    if ( i == N ){
+        return 0;
     }
+    if ( arr[i] == ourElem){
+        return 1 + numNum(++i, ourElem, arr);
+    }
+    return numNum(++i, ourElem, arr);
 }

@@ -1,37 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <conio.h>
-#include <malloc.h>
-
-int SizeOfNum ( int Num );
-void Array ( int count );
-
-int main ()
+#define MAX 80
+int main()
 {
-    int Num;
-    int count;
-    printf ( "Enter Num: " );
-    scanf ( "%i", &Num );
-    Array ( Num );
-}
-
-int SizeOfNum ( int Num )
-{
-    int count = 0;
-    int n = Num, i;
-    while ( n > 0 )
+    char *str = (char*) calloc ( sizeof ( char ), MAX );
+    char temp;
+    int i = 0;
+    printf ( "Input string: " );
+    gets ( str );
+    printf ( "You`ve input: " );
+    while ( i != MAX - 1 )
     {
-        n /= 10;
-        count++;
+        temp = * ( str + i );
+        if ( temp == 0 ) break;
+        printf ( "%c", temp );
+        i++;
     }
-    printf ( "count =  %i\n", count );
-//  count = 0;
-    return count;
+    free(str);
+    return 0;
 }
 
-void Array ( int Num )
-{
-    int Size = SizeOfNum ( Num );
-    printf ( "Size = %i", Size );
-    int*arr = ( int* ) malloc ( Size * sizeof ( int ) );
-    printf ( "\nSize of array = %i", _msize ( arr )/4 );
-}

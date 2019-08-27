@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <conio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
@@ -17,8 +18,9 @@ int main()
     for ( i = 0; i < M; i++){
         for ( j = 0; j < N; j++){
         array [i][j] = rand() %11;
-        printf("Array [%i][%i] = %i\n", i, j, array [i][j]);
+         printf("%2i ",array [i][j]);
         }
+        printf("\n");
     }
     printf("______________________________\n");
       for ( i = M - 1; i > 0; i--){
@@ -28,12 +30,13 @@ int main()
     }
     for ( i = 0; i < M; i++){
         for ( j = 0; j < N; j++){
-        printf("Array [%i][%i] = %i\n", i, j, array [i][j]);
+        printf("%2i ",array [i][j]);
         }
+        printf("\n");
     }
 
 
-    getchar();
+    getch();
     return 0;
 }
 
