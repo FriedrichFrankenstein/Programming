@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdlib.h>
 #define N 15
 #define M 16
 
@@ -10,9 +8,9 @@ void creatingBinaryFile ();
 
 int main()
 {
+    creatingBinaryFile  ();
     FILE* fp = fopen ( "input.dat", "rb" );
     FILE* fpOutput = fopen ( "output.dat", "wb" );
-    creatingBinaryFile  ();
     int A[N] = {}, i = 0, j, B[M] = {}, temp;
     if ( fread ( A, sizeof ( int ), N, fp ) >= N )
     {

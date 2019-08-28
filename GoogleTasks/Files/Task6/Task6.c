@@ -10,8 +10,7 @@ int main()
     float tempFloat, sumFloat = 0, lastValidNum;
     int tempInt, sumInt = 0, sumIntParts = 0;
 
-    while(1){
-        if (fscanf(input, "%f", &tempFloat) == EOF) break;
+    while(fscanf(input, "%f", &tempFloat) != EOF){
         tempInt = tempFloat;
         if (tempFloat - tempInt == 0){
             fprintf(integers, "%i\n", tempInt);
@@ -29,8 +28,7 @@ int main()
     rewind(validNumbers);
     lastValidNum = tempFloat;
     fprintf(validNumbers, "Integer parts: ");
-    while(1){
-        if (fscanf(input, "%f", &tempFloat) == EOF ) break;
+    while(fscanf(input, "%f", &tempFloat) != EOF){
         tempInt = tempFloat;
         fprintf(validNumbers, "%i ", tempInt);
         if (tempFloat == lastValidNum) break;
