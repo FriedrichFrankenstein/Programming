@@ -4,7 +4,7 @@
 #include <time.h>
 #include <stdlib.h>
 #define N 15
-#define M 16
+#define M 20
 
 void creatingBinaryFile ();
 
@@ -37,7 +37,7 @@ int main()
     for ( i = 0; i < N; i++ )
     {
         fread(&j, sizeof(int), 1, fpOutput);
-        printf ( "j = %i  A = %i  B = %i\n", j, A[i], B[i] );
+        printf ( "sum = %i  A = %i  B = %i\n", j, A[i], B[i] );
     }
     fclose ( fp );
     fclose ( fpOutput );
@@ -46,7 +46,7 @@ int main()
 
 void creatingBinaryFile (){
 
-  srand(time(NULL));
+    srand(time(NULL));
     FILE* fp = fopen("input.dat", "wb");
     int arr [30], i;
     for (i = 0; i < 30; i++){
