@@ -6,25 +6,34 @@
 
 
 
-int main()
+//int main()
+//
+//{
+//    getch();
+//    return 0;
+//}
 
-{
-    char *str = calloc(sizeof(char), MAX);
-    char temp;
-    int i = 0;
-    printf ( "Input string: " );
-    while (i != MAX - 1){
-        temp = getch();
-        if (temp == 27 || temp == 13){
-            break;
-        } else {
-            printf("%c", temp);
-            *(str + i) = temp;
-            i++;
-        }
-
+int main () {
+    int i, j;
+    char **names = ( char ** ) calloc ( sizeof ( char ), N );
+    for ( i = 0; i < N; i++ )
+    {
+        * ( names + i ) = ( char * ) calloc ( sizeof ( char ), 20 );
     }
-    str[i] = 0;
-    printf ( "\nYou`ve input: %s", str );
+    for ( i = 0; i < N; i++ )
+    {
+        for ( j = 0; j < N; j++ )
+        {
+            if ( places [j] == i + 1 )
+            {
+                strcpy ( * ( names + i ), teams [j] );
+            }
+        }
+    }
+    for ( i = 0; i < N; i++ )
+    {
+        free ( * ( names + i ) );
+    }
+    free ( names );
     return 0;
 }
