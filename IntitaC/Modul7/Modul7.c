@@ -24,7 +24,7 @@ int main()
     Club temp;
     for ( i = 0; i < n; i++ )
     {
-        fscanf ( input, "%s %s %i", & ( team + i )->name, & ( team + i ) ->city, & ( team + i )->score );
+        fscanf ( input, "%s %s %i",  ( team + i )->name,  ( team + i ) ->city, & ( team + i )->score );
     }
     for ( i = 0; i < n; i ++ )
     {
@@ -60,6 +60,8 @@ int main()
     fread(&temp, sizeof ( Club ), 1, output );
     printf ( "%s %s %i\n", temp.name, temp.city, temp.score );
     getch();
+    free(team);
+    fclose(output);
     return 0;
 }
 
