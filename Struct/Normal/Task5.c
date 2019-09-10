@@ -15,7 +15,7 @@ typedef struct
 
 int main()
 {
-    char teams [][30] = {"Ludogorec", "Dunav", "Beroe", "Beroe", "Cherno More", "Lokomotiv", "Etyr", "Neftohimik", "Botev", "Slavia"};
+    char teams [][30] = {"Ludogorec", "Dunav", "Beroe", "Levsky", "Cherno More", "Lokomotiv", "Etyr", "Neftohimik", "Botev", "Slavia"};
     char towns [][30] = {"Razgrad", "Ruse", "Stara Zagora", "Sofia", "Varna", "Plowdyv", "Veliko Tyrnovo", "Burgas","Plowdyv", "Sofia"};
     int i, n, j, max, place;
     Club temp;
@@ -42,7 +42,6 @@ int main()
             if (( teamsA + j )->score > ( teamsA + place )->score){
                 place = j;
             }
-               //printf("TRUE");
         }
         temp = *( teamsA + place );
         *( teamsA + place ) = *( teamsA + i );
@@ -53,6 +52,32 @@ int main()
         (teamsA + i)->place = i + 1;
         printf("Place - %i; Name - %s; city - %s; score - %i\n", ( teamsA + i )->place, ( teamsA + i )->name, ( teamsA + i )->city,  (teamsA + i)->score);
     }
+    for ( i = 0; i < n; i++){
+        for (j = 0; j < n; j++){
+            if (strcmp( ( teamsA + i )->name, ( teamsB + j )->name) == 0 ){
+                ( teamsB + j )->place = ( teamsA + i )-> place;
+            }
+        }
+    }
+    printf("\n\n\n");
+     for (i = 0; i < n; i++){
+            printf("Place - %i; Name - %s; city - %s; score - %i\n", ( teamsB + i )->place, ( teamsB + i )->name, ( teamsB + i )->city,  (teamsB + i)->score);
+    }
+    free(teamsA);
+    teamsA  = (Club*) calloc(sizeof(Club), n);
+    for (i = 0; i < n; i++){
+        for (j = 0; j < n; j++){
+            if (( teamsB + j )->place == i + 1){
+                 *( teamsA + i ) = *( teamsB + j );
+                 break;
+            }
+        }
+    }
+     printf("\n\n\n");
+     for (i = 0; i < n; i++){
+            printf("Place - %i; Name - %s; city - %s; score - %i\n", ( teamsA + i )->place, ( teamsA + i )->name, ( teamsA + i )->city,  (teamsA + i)->score);
+    }
+    free(teamsB);
     free(teamsA);
     getch();
     return 0;
