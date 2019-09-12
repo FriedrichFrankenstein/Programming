@@ -28,10 +28,6 @@ int main()
         printf ( "Enter date for team %i(name, town, place, score): ", i + 1 );
         scanf ( "%s %s %i %i", ( teams + i )->name, ( teams + i )->city, & ( teams + i )->place, & ( teams + i )->score );
     }
-//    FILE *input = fopen("input.txt", "r");
-//    for (i = 0; i < 10; i++){
-//        fscanf(input, "%s %s %i %i", ( teams + i )->name, ( teams + i )->city, & ( teams + i )->place, & ( teams + i )->score );
-//    }
     for ( i = 0; i < n; i++ )
     {
         printf ( "%s %s %i %i\n", ( teams + i )->name, ( teams + i )->city, ( teams + i )->place, ( teams + i )->score );
