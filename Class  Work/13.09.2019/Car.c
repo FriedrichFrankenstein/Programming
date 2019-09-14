@@ -20,7 +20,7 @@ void carIni ( Car *cars, int numCars );
 
 void printCar ( Car *cars, int numCars );
 
-void printFile  ( Car *cars, int numCars );
+void printFile ( Car *cars, int numCars );
 
 int main ()
 {
@@ -31,7 +31,7 @@ int main ()
     cars = ( Car * ) calloc ( sizeof ( Car ), numCars );
     carIni ( cars, numCars );
     printCar ( cars, numCars );
-    printf("YESSS");
+    printf ( "YESSS" );
     printFile ( cars, numCars );
     free ( cars );
     getch();
@@ -47,7 +47,7 @@ void carIni ( Car *cars, int numCars )
         scanf ( "%s %f %f", ( cars + i ) ->mark, & ( cars + i ) ->weight, & ( cars + i ) ->maxSpeed );
         fflush ( stdin );
         printf ( "Is car on? Enter 1 - yes or - No: " );
-        scanf ( "%i", &( cars + i )->work );
+        scanf ( "%i", & ( cars + i )->work );
     }
 }
 
@@ -73,25 +73,25 @@ void printCar ( Car *cars, int numCars )
     }
 }
 
-void printFile  ( Car *cars, int numCars ){
+void printFile ( Car *cars, int numCars )
+{
     int i;
-    FILE *output = fopen("dataCar.txt", "w");
+    FILE *output = fopen ( "dataCar.txt", "w" );
     for ( i = 0; i < numCars; i++ )
     {
-        fprintf (output, "Mark of car = %s\nWeight of car = %g\nMax speed = %g\n", ( cars + i ) ->mark, ( cars + i ) ->weight, ( cars + i ) ->maxSpeed );
+        fprintf ( output, "Mark of car = %s\nWeight of car = %g\nMax speed = %g\n", ( cars + i ) ->mark, ( cars + i ) ->weight, ( cars + i ) ->maxSpeed );
         switch ( ( cars + i )->work )
         {
         case On:
         {
-            fprintf (output, "Car is ON\n" );
+            fprintf ( output, "Car is ON\n" );
             break;
         }
         case Off:
         {
-            fprintf (output, "Car is Off\n" );
+            fprintf ( output, "Car is Off\n" );
             break;
         }
         }
     }
-
 }
