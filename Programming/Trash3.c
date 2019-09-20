@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <conio.h>
+
+int func (int i)
+    if (i == 10){
+        return i;
+    } else
+    {
+       func(++i);
+    }
+}
 
 int main()
 
 {
-    int *a = (int *) calloc(INT_MAX, INT_MAX);
-    int i = 0;
-    while (1){
-        *a = i;
-        printf("%i", *a);
-        i++;
-        if ( *a = 1000){
-            break;
-        }
-    }
-    free(a);
+    printf("Result = %i", func(1));
+    getch();
     return 0;
 }
 
