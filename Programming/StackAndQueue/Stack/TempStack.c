@@ -14,6 +14,8 @@ void Push ( PNode *Head );
 
 void Pop ( PNode *Head );
 
+void Pop1 ( PNode *Head1, PNode *Head2);
+
 
 int main()
 {
@@ -36,4 +38,15 @@ void Pop ( PNode *Head ) // функція отримання і видалення “верхнього” вузла стек
         return;
     *Head = TopNode->next; // пересуваємо покажчик вершини на наступний вузол
     free ( TopNode ); // звільняємо пам’ять від елемента TopNode
+}
+
+void Pop1 ( PNode *Head1, PNode *Head2) // функція для переміщення вершини Head1 до стеку Head2
+{
+    PNode TopNode = *Head1; // покажчик на вершину стеку
+    if (TopNode == NULL ){
+        return;
+    }
+    *Head1 = (*Head1)->next;
+    TopNode->next = *Head2;
+    *Head2 = TopNode;
 }
