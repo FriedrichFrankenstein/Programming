@@ -20,7 +20,7 @@ int main()
 {
     srand(time(NULL));
     int i, number;
-    PNode Strack1, Strack2, Temp;
+    PNode Strack1 = NULL, Strack2 = NULL, Temp;
     for (i = 0; i < 10; i++){
         printf("Enter number to enter in stack: ");
         number = rand() % 100;
@@ -33,16 +33,11 @@ int main()
         printf("Stack2 = %i\n", number);
         Push (&Strack2, number);
     }
-    i = 0;
     while (Strack1 != NULL){
-            printf("TEMp = %i\n", Strack1->number);
-            i++;
             Pop (&Strack1, &Strack2);
     }
     Temp = Strack2;
-    i = 0;
-    while (i < 18){
-            i++;
+    while (Temp != NULL){
         printf("Struck = %i\n", Temp->number);
         Temp = Temp->next;
     }
