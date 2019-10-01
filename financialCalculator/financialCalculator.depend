@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1569940928 source:e:\programming\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	"inputDate.h"
+
+1569940255 source:e:\programming\financialcalculator\print_table.c
+	<stdio.h>
+	<stdlib.h>
+	"print_Table.h"
+
+1569939101 e:\programming\financialcalculator\print_table.h
+
+1569940853 e:\programming\financialcalculator\inputdate.h
+
