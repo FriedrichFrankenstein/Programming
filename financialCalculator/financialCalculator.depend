@@ -13,3 +13,17 @@
 
 1569940853 e:\programming\financialcalculator\inputdate.h
 
+1569942113 source:c:\users\as\documents\programming\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+
+1569942113 c:\users\as\documents\programming\financialcalculator\inputdate.h
+
+1569942113 source:c:\users\as\documents\programming\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	"inputDate.h"
+
