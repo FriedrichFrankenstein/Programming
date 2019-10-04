@@ -2,28 +2,46 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <windows.h>
 
 
 
 int main()
 
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     FILE *input = fopen ( "nameOfRows.txt", "r" );
     FILE *output = fopen ( "rowsName.dat", "wb" );
     int i, j = 0, flag;
     char* string = ( char* ) calloc ( sizeof ( char ), 100 );
     while ( 1 )
     {
-        flag = fscanf ( input, "%c", * ( string + j ) ) ;
-
-        if ( * ( string + j ) == '\n' || flag == 0 )
+        if (fscanf ( input, "%c", &* ( string + j ) ) == EOF){
+             *(string + j) = 0;
+            fwrite(string, sizeof(char), 100, output);
+            j = 0;
+            break;
+        }
+        if ( * ( string + j ) == '\n' )
         {
             *(string + j) = 0;
             fwrite(string, sizeof(char), 100, output);
+           // printf("%s\n", string);
             j = 0;
+            continue;
         }
+        j++;
     }
     freopen( "rowsName.dat","rb", output);
+    i = 0;
+    while( i < 161){
+        i++;
+        fread(string, sizeof(char), 100, output);
+        printf("%s\n", string);
+    }
+    fclose(input);
+    fclose(output);
     getch();
     return 0;
 }
