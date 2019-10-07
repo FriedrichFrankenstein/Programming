@@ -3,27 +3,24 @@
 #include <stdlib.h>
 #include <conio.h>
 
+typedef struct {
 
+    int *array1;
+    int *array2;
+} Test;
 
 int main()
 
 {
-    FILE *input = fopen ( "nameOfRows.txt", "r" );
-    FILE *output = fopen ( "rowsName.dat", "wb" );
-    int i, j = 0, flag;
-    char* string = ( char* ) calloc ( sizeof ( char ), 100 );
-    while ( 1 )
-    {
-        flag = fscanf ( input, "%c", * ( string + j ) ) ;
-
-        if ( * ( string + j ) == '\n' || flag == 0 )
-        {
-            *(string + j) = 0;
-            fwrite(string, sizeof(char), 100, output);
-            j = 0;
-        }
+    int i;
+    Test *big;
+    big = (Test*) calloc(sizeof(Test), 5);
+    for (i = 0; i < 5; i++){
+        big->array1 = (int*) calloc(sizeof(int), 5);
+        big->array2 = (int*) calloc(sizeof(int), 5);
     }
-    freopen( "rowsName.dat","rb", output);
+    big->array1[0] = 5;
+    printf("%i",  big->array1[0] = 5);
     getch();
     return 0;
 }

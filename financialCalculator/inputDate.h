@@ -2,15 +2,12 @@
 #define INPUTDATE_H_INCLUDED
 #define START_X 100
 #define START_Y 10
-typedef struct{
-    float beginOfPeriod;
-    float endOfPeriod;
-    float average;
-} Values;
 
 typedef struct{
     int id;
-    Values* value;
+    float *beginOfPeriod;
+    float *endOfPeriod;
+    float *average;
 } Row;
 
 void printTable (int years, int firstYear);
@@ -26,7 +23,5 @@ void menu (Row *rows);
 void crateNewFirma (Row *rows, int years, int firstYear);
 
 void catchDate (int x, int y, Row *rows, int table);
-
-void clrscr();
 
 #endif // INPUTDATE_H_INCLUDED

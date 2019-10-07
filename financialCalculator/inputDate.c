@@ -63,19 +63,21 @@ void crateNewFirma ( Row *rows, int years, int firstYear )
     int i;
     for ( i = 0; i < 161; i++ )
     {
-        (rows + i)->value = ( Values* ) calloc ( sizeof ( Values ), years );
+        (rows + i) ->beginOfPeriod = ( float* ) calloc ( sizeof ( float ), years );
+        (rows + i) ->endOfPeriod = ( float* ) calloc ( sizeof ( float ), years );
+        (rows + i) ->average = ( float* ) calloc ( sizeof ( float ), years );
     }
     printf ( "Введіть назву підприємтсва (без пробілів та англійською мовою): " );
     scanf ( "%s", nameCompany );
     strcat ( nameCompany, ".txt" );
     fprintf ( output, "%s\n", nameCompany );
     fclose ( output );
-    clrscr();
-    printTable (years, firstYear);
+    system ( "cls" );
+    printTable ( years, firstYear );
     cursorMoving ( rows, years );
 }
 
-void printTable (int years, int firstYear)
+void printTable ( int years, int firstYear )
 {
     int i, j;
     FILE *input = fopen ( "rowsName.dat", "rb" );
@@ -101,13 +103,13 @@ void printTable (int years, int firstYear)
     }
     printf ( "\n" );
     printf ( "___________________________________________________________________________________________________" );
-    for ( j = 0; j < years*2; j++ )
+    for ( j = 0; j < years * 2; j++ )
     {
         printf ( "_________________" );
     }
     printf ( "\n" );
     printf ( "___________________________________________________________________________________________________" );
-    for ( j = 0; j < years*2; j++ )
+    for ( j = 0; j < years * 2; j++ )
     {
         printf ( "_________________" );
     }
@@ -116,13 +118,13 @@ void printTable (int years, int firstYear)
     {
         fread ( string, sizeof ( char ), 100, input );
         printf ( "|%-97s", string );
-        for ( j = 0; j < years*2; j ++ )
+        for ( j = 0; j < years * 2; j ++ )
         {
             printf ( "|               |" );
         }
         printf ( "\n" );
         printf ( "___________________________________________________________________________________________________" );
-        for ( j = 0; j < years*2; j++ )
+        for ( j = 0; j < years * 2; j++ )
         {
             printf ( "_________________" );
         }
@@ -175,7 +177,7 @@ void gotoxy ( int x, int y )
     SetConsoleCursorPosition ( h, c );
 }
 
-void cursorMoving ( Row *rows, int years  )
+void cursorMoving ( Row *rows, int years )
 {
     int Keys, x, y, tab = 0, *table = &tab;
     int *poz_x = &x ;
@@ -207,12 +209,13 @@ void cursorMoving ( Row *rows, int years  )
         case 13:
         {
             checkCordinate ( poz_x, poz_y, table, years );
-           // catchDate ( *poz_x, *poz_y, rows, *table );
+            catchDate ( *poz_x, *poz_y, rows, *table );
+            checkCordinate ( poz_x, poz_y, table, years );
             break;
         }
         case 27:
         {
-            clrscr();
+            system ( "cls" );
             printf ( "Result = %i", 25 );
             return;
         }
@@ -243,9 +246,9 @@ void checkCordinate ( int* poz_x, int* poz_y, int* table, int years )
         {
             *poz_x = 100;
         }
-        if ( *poz_x > (years - 1)  * 34 + 117 )
+        if ( *poz_x > ( years - 1 )  * 34 + 117 )
         {
-            *poz_x = (years - 1) * 34 + 117;
+            *poz_x = ( years - 1 ) * 34 + 117;
         }
         if ( *poz_y < 6 )
         {
@@ -258,9 +261,9 @@ void checkCordinate ( int* poz_x, int* poz_y, int* table, int years )
         {
             *poz_x = 100;
         }
-        if ( *poz_x > (years - 1) * 17 + 100 )
+        if ( *poz_x > ( years - 1 ) * 17 + 100 )
         {
-            *poz_x = (years - 1) * 17 + 100;
+            *poz_x = ( years - 1 ) * 17 + 100;
         }
         if ( *poz_y > 333 )
         {
@@ -272,28 +275,25 @@ void checkCordinate ( int* poz_x, int* poz_y, int* table, int years )
 
 void catchDate ( int x, int y, Row *rows, int table )
 {
-//    if ( table == 0 )
-//    {
-//        if ( ( ( x - 100 ) / 17 ) % 2 != 0 )
-//        {
-//            scanf ( "%f", & ( rows + ( y - 6 ) / 2 )-> ( value + ( x - 100 ) / 17 )->beginOfPeriod );
-//           scanf ( "%f", & (rows + x ) -> (value + y) ->beginOfPeriod );
-//        }
-//        else
-//        {
-//            scanf ( "%i", & ( rows + ( y - 6 ) / 2 )-> ( value + ( x - 100 ) / 17 )->endOfPeriod );
-//        }
-//    }
-//    else if ( table == 1 )
-//    {
-//    }
-//    else
-//    {
-//        printf ( "Не вірно введенні дані!\n" );
-//    }
+
+    if ( table == 0 )
+    {
+        if ( ( ( x - 100 ) / 17 ) % 2 == 0 )
+        {
+            scanf ( "%f", & ( rows + ( y - 6 ) / 2 )-> beginOfPeriod[( x - 100 ) / 17] );
+        }
+        else
+        {
+            scanf ( "%f", & ( rows + ( y - 6 ) / 2 )-> endOfPeriod[(( x - 100 ) / 17 ) - 1]);
+        }
+    }
+    else if ( table == 1 )
+    {
+
+    }
+    else
+    {
+        printf ( "Не вірно введенні дані!\n" );
+    }
 }
 
-void clrscr()
-{
-    system ( "@cls||clear" );
-}
