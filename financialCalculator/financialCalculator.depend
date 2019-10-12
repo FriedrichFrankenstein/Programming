@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1570190582 source:e:\programming\financialcalculator\main.c
+1570802003 source:e:\programming\financialcalculator\main.c
 	<stdio.h>
 	<conio.h>
 	<windows.h>
@@ -12,13 +12,40 @@
 
 1569939101 e:\programming\financialcalculator\print_table.h
 
-1570192551 e:\programming\financialcalculator\inputdate.h
+1570801349 e:\programming\financialcalculator\inputdate.h
 
-1570193100 source:e:\programming\financialcalculator\inputdate.c
+1570802721 source:e:\programming\financialcalculator\inputdate.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<windows.h>
 	<string.h>
+	"inputDate.h"
+	"finCalculations.h"
+
+1570262138 source:c:\users\as\documents\programming\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	"inputDate.h"
+
+1570202396 c:\users\as\documents\programming\financialcalculator\inputdate.h
+
+1570203224 source:c:\users\as\documents\programming\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+
+1570800858 source:e:\programming\financialcalculator\fincalculations.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<math.h>
+	"finCalculations.h"
+
+1570797481 e:\programming\financialcalculator\fincalculations.h
 	"inputDate.h"
 
