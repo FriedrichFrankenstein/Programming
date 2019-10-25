@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1570190582 source:e:\programming\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+
+1569940255 source:e:\programming\financialcalculator\print_table.c
+	<stdio.h>
+	<stdlib.h>
+	"print_Table.h"
+
+1569939101 e:\programming\financialcalculator\print_table.h
+
+1570192551 e:\programming\financialcalculator\inputdate.h
+
+1570193100 source:e:\programming\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	"inputDate.h"
+
+1570262138 source:c:\users\as\documents\programming\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	"inputDate.h"
+
+1570202396 c:\users\as\documents\programming\financialcalculator\inputdate.h
+
+1570203224 source:c:\users\as\documents\programming\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+
+1570262814 source:c:\users\as\documents\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	"inputDate.h"
+
+1570202396 c:\users\as\documents\financialcalculator\inputdate.h
+
+1570203224 source:c:\users\as\documents\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+
+1570264366 source:c:\users\as\documents\temo\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+
+1570264212 c:\users\as\documents\temo\financialcalculator\inputdate.h
+
+1570464718 source:c:\users\as\documents\temo\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	"inputDate.h"
+

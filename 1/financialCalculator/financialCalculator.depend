@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1572044572 source:e:\programming\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+	"finCalculations.h"
+	"outputDate.h"
+
+1569940255 source:e:\programming\financialcalculator\print_table.c
+	<stdio.h>
+	<stdlib.h>
+	"print_Table.h"
+
+1569939101 e:\programming\financialcalculator\print_table.h
+
+1572007054 e:\programming\financialcalculator\inputdate.h
+
+1572042686 source:e:\programming\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	"inputDate.h"
+	"finCalculations.h"
+	"outputDate.h"
+
+1570262138 source:c:\users\as\documents\programming\financialcalculator\inputdate.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	"inputDate.h"
+
+1570202396 c:\users\as\documents\programming\financialcalculator\inputdate.h
+
+1570203224 source:c:\users\as\documents\programming\financialcalculator\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"inputDate.h"
+
+1572044572 source:e:\programming\financialcalculator\fincalculations.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<math.h>
+	"finCalculations.h"
+
+1572007055 e:\programming\financialcalculator\fincalculations.h
+	"inputDate.h"
+
+1572044572 source:e:\programming\financialcalculator\outputdate.c
+	<stdio.h>
+	<conio.h>
+	<math.h>
+	<windows.h>
+	"outputDate.h"
+
+1572007053 e:\programming\financialcalculator\outputdate.h
+

@@ -11,8 +11,8 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    FILE *input = fopen ( "nameOfRows.txt", "r" );
-    FILE *output = fopen ( "rowsName.dat", "wb" );
+    FILE *input = fopen ( "nameOfOutRows.txt", "r" );
+    FILE *output = fopen ( "rowsOutName.dat", "wb" );
     int i, j = 0, flag;
     char* string = ( char* ) calloc ( sizeof ( char ), 100 );
     while ( 1 )
@@ -33,9 +33,9 @@ int main()
         }
         j++;
     }
-    freopen( "rowsName.dat","rb", output);
+    freopen( "rowsOutName.dat","rb", output);
     i = 0;
-    while( i < 161){
+    while( i < 22){
         i++;
         fread(string, sizeof(char), 100, output);
         printf("%s\n", string);
