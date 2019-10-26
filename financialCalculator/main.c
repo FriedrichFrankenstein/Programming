@@ -32,11 +32,11 @@ void menu ( Row *rows, float **result )
     do
     {
         printf ( "Бажаєте додати нове підприємство? 1 - так; 2 - ні, бажаю використати вже додане." );
-        scanf ( "%i", &choice );
+        choice = funScanInt();
         if ( choice == 1 )
         {
             printf ( "Уведіть кільскість досліджувальних років (максимум 3) : " );
-            scanf ( "%i", &years );
+            years = funScanInt();
             if ( years > 3 || years < 1 )
             {
                 printf ( "Ви ввели не коректні дані.\n" );
@@ -46,7 +46,7 @@ void menu ( Row *rows, float **result )
             {
                 getMemory ( years, rows );
                 printf ( "Уведіть номер першого року: " );
-                scanf ( "%i", &firstYear );
+                firstYear = funScanInt();
                 if ( firstYear < 1000 || firstYear > 9999 )
                 {
                     printf ( "Ви ввели не коректні дані.\n" );
