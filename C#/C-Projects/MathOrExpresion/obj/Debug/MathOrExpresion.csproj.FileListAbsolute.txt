@@ -1,0 +1,6 @@
+C:\Users\Feldmarschall\source\repos\MathOrExpresion\obj\Debug\MathOrExpresion.csprojAssemblyReference.cache
+C:\Users\Feldmarschall\source\repos\MathOrExpresion\bin\Debug\MathOrExpresion.exe.config
+C:\Users\Feldmarschall\source\repos\MathOrExpresion\bin\Debug\MathOrExpresion.exe
+C:\Users\Feldmarschall\source\repos\MathOrExpresion\bin\Debug\MathOrExpresion.pdb
+C:\Users\Feldmarschall\source\repos\MathOrExpresion\obj\Debug\MathOrExpresion.exe
+C:\Users\Feldmarschall\source\repos\MathOrExpresion\obj\Debug\MathOrExpresion.pdb
